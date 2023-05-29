@@ -1,0 +1,37 @@
+<div class="bodyBack">
+  <div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+            <div class="card px-5 py-5" id="form1">
+              <form [formGroup]="form" (ngSubmit)="login">
+                <div class="form-data">
+                  <div class="forms-inputs mb-4 w-100">
+                    <span>Email or username</span>
+                    <input autocomplete="off" class="w-100" type="text"  formControlName="email" name="email">
+                    <small class="form-text text-danger" *ngIf="form.controls['email'].errors?.['required'] && form.controls['email'].touched">
+                      El correo electrónico es requerido
+                    </small>
+                      <!-- <div class="invalid-feedback">A valid email is required!</div> -->
+                  </div>
+                  <div class="forms-inputs mb-4 w-100">
+                    <span>Password</span>
+                     <input autocomplete="off" class="w-100" type="password" formControlName="password" name="login">
+                     <small class="form-text text-danger" *ngIf="form.controls['password'].errors?.['required'] && form.controls['password'].touched">
+                      La contraseña es requerida
+                    </small>
+                      <!-- <div class="invalid-feedback">Password must be 8 character!</div> -->
+                  </div>
+
+                  <div class="mb-3">
+                    <input type="button" (click)="login()" class="btn btn-dark w-100" value="Login">
+                   </div>
+              </div>
+              </form>
+
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+</div>
