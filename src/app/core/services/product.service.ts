@@ -45,4 +45,10 @@ export class ProductService{
 
 
   }
+  getProductsXStrore(id_tienda:number){
+    return this.http.ApiCallAsync(environment.methodGet, environment.urlWebApi, "Product/GetProductXStore?id_tienda="+id_tienda).then(result => {
+      return result
+    })
+
+  }
 }

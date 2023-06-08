@@ -21,6 +21,11 @@ const routes: Routes = [{
       path:'clients',
       canActivate:[AdminGuard],
       loadChildren:()=>import('./clients/clients.module').then(m=>m.ClientsModule)
+    },
+    {
+      path:'ecommerce',
+      canActivate:[AdminGuard],
+      loadChildren:()=>import('./ecommerce/ecommerce.module').then(m=>m.EcommerceModule)
     }
   ]
 }];

@@ -1,13 +1,25 @@
 import { Injectable } from "@angular/core";
 import { UtileriaService } from "./utileriaService.service";
 import { environment } from "src/enviroment/enviroment";
+import { BehaviorSubject } from "rxjs";
+import { StoreModel } from "../models/store.model";
 
 @Injectable({
   providedIn: 'root',
 })
 
 export class StoreService {
+
+  storeSubj =  new BehaviorSubject<number>(-1);
+  storeSelected$ = this.storeSubj.asObservable();
   constructor(private http: UtileriaService) {
+
+  }
+
+  selectStore(store:number){
+      this.storeSubj.next(store);
+      //console.log(this.storeSubj.value)
+
 
   }
 

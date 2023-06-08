@@ -1,0 +1,50 @@
+<div class="cont">
+
+
+  <div class="card">
+    <div class="row">
+      <div class="col-md-8 cart">
+        <div class="title">
+          <div class="row">
+            <div class="col">
+              <h4><b>Tu carrito esta listo!</b></h4>
+            </div>
+            <div class="col align-self-center text-right text-muted">{{totalProducts}} items</div>
+          </div>
+        </div>
+        <div class="row border-top border-bottom" *ngFor="let product of productsCart.products">
+          <div class="row main align-items-center">
+            <div class="col-2"><img class="img-fluid" src="assets/img/notFound.png"></div>
+            <div class="col">
+              <div class="row text-muted">{{product.descripcion}}</div>
+
+            </div>
+            <div class="col">
+              <a href="#">-</a><a href="#" class="border">{{product.cantidad}}</a><a href="#">+</a>
+            </div>
+            <div class="col">{{product.precio | currency:'MXN':'symbol':'1.2-2':'es-mx' }} <span class="close">&#10005;</span>{{product.cantidad}}</div>
+          </div>
+        </div>
+
+        <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to shop</span></div>
+      </div>
+      <div class="col-md-4 summary">
+        <div>
+          <h5><b>Summary</b></h5>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col" style="padding-left:0;">ITEMS {{totalProducts}}</div>
+          <div class="col text-right">{{productsCart.total| currency:'MXN':'symbol':'1.2-2':'es-mx'}}</div>
+        </div>
+
+        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+          <div class="col">TOTAL </div>
+          <div class="col text-right">{{productsCart.total| currency:'MXN':'symbol':'1.2-2':'es-mx'}}</div>
+        </div>
+        <button class="btn">CHECKOUT</button>
+      </div>
+    </div>
+
+  </div>
+</div>
